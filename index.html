@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>GitHub Copilot — 1‑Tages‑Workshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Reveal.js from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>GitHub Copilot — 1‑Tages‑Workshop</h1>
+        <p>Praxisorientiertes Training: Einführung, Workflow, Best Practices, Grenzen & Übungen</p>
+        <p><small>Trainer: moteer</small></p>
+        <aside class="notes">
+          Begrüßung, kurzer persönlicher Einstieg. Kurz Agenda vorstellen und Erwartungen abfragen (1‑2 Sätze vom Publikum).
+        </aside>
+      </section>
+
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li>09:00 — 09:30 Einführung & Erwartungen</li>
+          <li>09:30 — 10:15 Copilot Grundlagen & Setup</li>
+          <li>10:15 — 10:30 Pause</li>
+          <li>10:30 — 11:30 Workflow & Integration (Hands-on)</li>
+          <li>11:30 — 12:15 Best Practices & Sicherheit</li>
+          <li>12:15 — 13:15 Mittag</li>
+          <li>13:15 — 14:30 Agent‑Modus & Übungen</li>
+          <li>14:30 — 15:00 Case Studies & Diskussion</li>
+          <li>15:00 — 15:15 Pause</li>
+          <li>15:15 — 16:00 Übungen & Review</li>
+          <li>16:00 — 16:30 Wrap‑up, Q&A, Ressourcen</li>
+        </ul>
+        <aside class="notes">
+          Schnell durchgehen, wie strikt wir die Zeiten einhalten — interaktive Teile und Pausen hervorheben.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Lernziele</h2>
+        <ul>
+          <li>Verstehen, wie Copilot arbeitet</li>
+          <li>Copilot sicher und produktiv einsetzen</li>
+          <li>Praktische Übungen: Setup, TDD, Agent‑Modus</li>
+          <li>Bewerten von Vorschlägen und Sicherheitsaspekten</li>
+        </ul>
+        <aside class="notes">
+          Betonung: Ziel ist nicht, Copilot blind zu vertrauen, sondern ein Werkzeug effizient zu nutzen.
+        </aside>
+      </section>
+
+      <section>
+        <h2>09:30 — 10:15: Einführung & Funktionsweise</h2>
+        <h3>Was ist Copilot?</h3>
+        <ul>
+          <li>KI‑gestützter Codeassistent</li>
+          <li>Kontextbasierte Vorschläge</li>
+          <li>Integration in IDEs / Codespaces</li>
+        </ul>
+        <aside class="notes">
+          Kurzer technischer Überblick (Modelle, Trainingsdaten, Wahrscheinlichkeitscharakter). Auf Missverständnisse hinweisen: Vorschläge sind probabilistisch.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Setup & Konfiguration</h2>
+        <ul>
+          <li>Extension installieren (VS Code / JetBrains)</li>
+          <li>Anmeldung, Aktivierung</li>
+          <li>Einstellungen: Vorschlagsdichte, Dateitypen</li>
+        </ul>
+        <aside class="notes">
+          Live‑Demo: schnell Copilot in VS Code zeigen (falls möglich). Alternativ Screenshots. Zeig kurz die wichtigsten Einstellungen.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Hands‑on 1 (10 Minuten)</h2>
+        <h3>Erste Begegnung: Fibonacci</h3>
+        <ol>
+          <li>Neue Datei in Python/JS</li>
+          <li>Kommentar: "Implement a function that returns the nth Fibonacci number"</li>
+          <li>Akzeptiere/ablehne Vorschläge, notiere 3 gute & 3 schlechte</li>
+        </ol>
+        <aside class="notes">
+          Die Teilnehmer sollen lokal oder im Codespace arbeiten. Ziel: Gefühl für Qualität. Sammle ein paar Beispiele im Chat/auf dem Whiteboard.
+        </aside>
+      </section>
+
+      <section>
+        <h2>11:30 — 12:15: Best Practices</h2>
+        <ul>
+          <li>Tests zuerst (TDD) vs. generieren lassen</li>
+          <li>Code‑Review & Tests sind Pflicht</li>
+          <li>Linters, Pre‑commit Hooks</li>
+        </ul>
+        <aside class="notes">
+          Praxisbeispiele: wann Vorschläge anpassen, wann verwerfen. Erinnerung an Lizenz- und Sicherheitsprüfungen.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Mittagspause</h2>
+        <aside class="notes">
+          60 Minuten Pause. Teilnehmer bitte pünktlich zurück.
+        </aside>
+      </section>
+
+      <section>
+        <h2>13:15 — 14:30: Agent‑Modus & Modularisierung</h2>
+        <p>Agenten nutzen, um Boilerplate/Module zu erzeugen</p>
+        <aside class="notes">
+          Erkläre Konzept Agent: wiederholbare Prompt‑Workflows, Generatoren für Module, Risiken bei automatischen Änderungen.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Hands‑on 2 (40 Minuten)</h2>
+        <h3>Aufgabe: User Service (Express / Flask)</h3>
+        <ol>
+          <li>Speziﬁkation schreiben (README-style)</li>
+          <li>Agent / Copilot verwenden, um Dateien zu erzeugen</li>
+          <li>Implementierung ergänzen, Tests schreiben (Jest / pytest)</li>
+          <li>Refactor & Review</li>
+        </ol>
+        <aside class="notes">
+          Zeitbox beachten: 10 Min Specs, 20 Min Coding + Tests, 10 Min Review. Moderatoren: bei Bedarf Hilfestellung geben.
+        </aside>
+      </section>
+
+      <section>
+        <h2>14:30 — 15:00: Case Studies & Diskussion</h2>
+        <ul>
+          <li>Effizienzsteigerungen</li>
+          <li>Auswirkungen auf Zusammenarbeit & Ownership</li>
+          <li>Lizenzfragen & Community‑Effekte</li>
+        </ul>
+        <aside class="notes">
+          Beispiele aus Lessons: CRUD-Boilerplate, TDD-Workflow. Öffne Diskussion: Wie ändert Copilot eure Review-Prozesse?
+        </aside>
+      </section>
+
+      <section>
+        <h2>15:15 — 16:00: Abschlussübungen & Review</h2>
+        <h3>Exercise: Validierung & Sicherheit (30 min)</h3>
+        <ol>
+          <li>Identifiziere mögliche Unsicherheiten in generiertem Code</li>
+          <li>Schreibe Tests / Hinweiskommentare</li>
+          <li>Erstelle ein kleines Policy‑Dokument: "Do/Don't when using Copilot"</li>
+        </ol>
+        <aside class="notes">
+          Teilnehmer präsentieren kurz (2‑3 Minuten) ihre Ergebnisse. Stelle Leitfragen: Datenlecks, Geheimnisse, Abhängigkeiten, Lizenzchaos.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Wrap‑up & Ressourcen</h2>
+        <ul>
+          <li>Takeaways</li>
+          <li>Weiterführende Links (Docs, EU AI Act Zusammenfassung)</li>
+          <li>Feedback & nächste Schritte</li>
+        </ul>
+        <aside class="notes">
+          Bitte Feedback-Formular: Was war hilfreich, was fehlt? Biete Follow‑up‑Session an (z. B. vertiefte TDD-Session).
+        </aside>
+      </section>
+
+      <section>
+        <h2>Ressourcen</h2>
+        <ul>
+          <li>GitHub Copilot Docs</li>
+          <li>Reveal.js — Präsentationstechnologie</li>
+          <li>Beispiel-Repos (im Workshop‑Repo)</li>
+        </ul>
+        <aside class="notes">
+          Links und Materialhinweis: alles ist im repository enthalten (lessons/, exercises/, examples/).
+        </aside>
+      </section>
+
+      <section>
+        <h2>Q & A</h2>
+        <aside class="notes">
+          Offene Runde — 10 Minuten. Falls noch Zeit: Live‑Refactor einer Teilnehmerlösung als Demo.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealNotes ],
+      transition: 'slide',
+      slideNumber: true
+    });
+  </script>
+</body>
+</html>
